@@ -1,6 +1,7 @@
 import React from 'react';
 import heroPage from "../assets/heroPage.webp"
 import heroPageSmalll from "../assets/HeropageImg.webp"
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -12,9 +13,9 @@ const Hero = () => {
                 <p className="text-emerald-600 font-medium text-lg">
                     Discover handcrafted ornaments made with love and attention to detail.
                 </p>
-            <button className="px-6 py-3 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition">
+            <Link to={"/category"} className="px-6 py-3 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition">
                 Shop Now
-            </button>
+            </Link>
             </div>
             <div className="md:w-1/2 mt-10 md:mt-0">
                 <img src={heroPageSmalll} alt="Hero" className="w-full rounded-xl shadow-lg" />

@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <section className="z-10 relative bg-pink-50 overflow-hidden h-[90vh]">
         <img className='-z-10 blur-[2px] object-cover w-[100vw] h-full absolute top-0 brightness-50 saturate-75' src={heroPage} alt="" />
-        <div className="z-20 max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-center h-full">
+        <div className="z-20 max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-center h-[90%]">
             <div className="md:w-1/2 space-y-6">
                 <h1 className="text-5xl font-bold text-emerald-600">Elegant. Timeless. Yours.</h1>
                 <p className="text-emerald-600 font-medium text-lg">

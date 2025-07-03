@@ -11,7 +11,7 @@ const Navbar = () => {
         <a href='/' className="text-2xl font-bold text-gray-800"><img className='hover:scale-110 duration-200 w-26 ' src={logo} alt="" /></a>
 
       
-        <ul className="max-md:hidden md:flex space-x-6 text-sm font-semibold text-gray-700">
+        <ul className="max-md:hidden md:flex space-x-6 text-lg font-semibold text-gray-700">
           <li><a href="#collections" className="hover:text-pink-600">Collections</a></li>
           <li><a href="#testimonials" className="hover:text-pink-600">Testimonials</a></li>
           <li><a href="#contact" className="hover:text-pink-600">Contact</a></li>

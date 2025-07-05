@@ -12,7 +12,7 @@ function App() {
   useEffect(()=>{
     fetch("http://localhost:8000/products")
     .then((res)=> res.json())
-    .then((res)=> setCollections(res))
+    .then((res)=> setCollections([...res]))
   },[])
 
   console.log(collections)
@@ -28,7 +28,7 @@ function App() {
     <>
       <div className="font-sans">
       <Navbar />
-      <Outlet context={collections} />
+      <Outlet context={{collections}} />
       <Footer />
     </div>
     </>

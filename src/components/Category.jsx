@@ -6,6 +6,8 @@ function Category() {
 
     const {collections}=useOutletContext()
 
+    console.log(collections)
+
     const filterdata=collections.filter((item)=> Id?item.category===Id : true)
 
   return (

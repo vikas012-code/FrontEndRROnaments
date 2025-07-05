@@ -10,7 +10,7 @@ function Category() {
 
     console.log(collections)
 
-    const filterdata=collections.filter((item)=> Id?item.category===Id : true)
+    const filterdata=collections.filter((item)=> Id?item.category==Id : true)
 
   return (
     <section className="py-6 bg-white min-h-[90vh]">

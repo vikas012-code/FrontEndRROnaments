@@ -1,4 +1,3 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
@@ -11,7 +10,6 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import ProductDetail from './components/ProductDetail.jsx';
-import ProductUpload from './components/ProductUpload.jsx';
 import Auth from './components/Auth.jsx';
 
 const router = createBrowserRouter([

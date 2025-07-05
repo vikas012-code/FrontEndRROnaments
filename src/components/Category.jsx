@@ -1,5 +1,4 @@
-import React from 'react'
-import { Link, useOutletContext, useParams } from 'react-router-dom'
+import { useOutletContext, useParams } from 'react-router-dom'
 import Card from './Card'
 
 function Category() {
@@ -15,10 +14,10 @@ function Category() {
         <h2 className="text-3xl font-bold text-center mb-10">Our {Id?Id:"Products"}</h2>
         <div className="flex flex-wrap justify-center gap-8">
           {Id}
-          {filterdata.map((item) => (
+          {filterdata.map(item => (
             <>
+            {Id}
             <Card key={item._id} item={item} />
-            {item.name}
             </>
           ))}
         </div>

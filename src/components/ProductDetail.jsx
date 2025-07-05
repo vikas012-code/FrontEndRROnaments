@@ -13,14 +13,18 @@ function ProductDetail() {
         return array
     }
 
-    const productdata=collections.filter((item)=>item.id==Id)[0]
+    const productdata=collections.filter((item)=>item._id==Id)[0]
     console.log(productdata)
   return (
     <div className='min-h-[80vh] bg-white flex flex-col relative items-center py-5'> 
+    {
+        productdata
+        &&
+        <>
         <div className='w-[70%] flex justify-center p-4 max-sm:w-full max-sm:flex-col max-sm:items-center'>
             <div className='w-[40%] relative shadow-lg max-sm:w-[80%] '>
                 <button className='absolute  top-0 right-4 cursor-pointer text-gray-300 focus:text-red-500'><p className=' text-7xl '>♥</p></button>
-                <img className='w-[30rem]'  src={productdata.img} alt="" />
+                <img className='w-[30rem]'  src={productdata.image} alt="" />
             </div>
             <div className='w-[40%] flex flex-col items-center justify-center max-sm:w-[80%] max-sm:mt-4'>
                 <p className=' text-3xl font-bold max-sm:text-lg'>{productdata.name}</p>
@@ -59,8 +63,8 @@ function ProductDetail() {
                 </div>
             </div>
         </div>
-
-       
+        </>
+    }
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import logo from "../assets/R&ROrnaments.jpg"
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -15,6 +16,7 @@ const Navbar = () => {
           <li><a href="#collections" className="hover:text-pink-600">Collections</a></li>
           <li><a href="#testimonials" className="hover:text-pink-600">Testimonials</a></li>
           <li><a href="#contact" className="hover:text-pink-600">Contact</a></li>
+          <Link className="hover:text-pink-600" to={"/productupload"}  >Admin</Link>
         </ul>
 
        
@@ -34,6 +36,7 @@ const Navbar = () => {
           <li><a href="#collections" onClick={() => setIsOpen(false)} className="block hover:text-pink-600">Collections</a></li>
           <li><a href="#testimonials" onClick={() => setIsOpen(false)} className="block hover:text-pink-600">Testimonials</a></li>
           <li><a href="#contact" onClick={() => setIsOpen(false)} className="block hover:text-pink-600">Contact</a></li>
+          <Link className="hover:text-pink-600" to={"/productupload"}  >Admin</Link>
         </ul>
       )}
     </nav>

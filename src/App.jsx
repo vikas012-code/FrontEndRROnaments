@@ -11,9 +11,24 @@ function App() {
   const [collections ,setCollections] = useState([])
 
   useEffect(()=>{
-    fetch("https://r-r-ornaments-backend.onrender.com/products")
+    fetch("https://r-r-ornaments-backend.onrender.com")
     .then((res)=> res.json())
-    .then((res)=> setCollections([...res]))
+    .then((res)=> {
+      console.log(res)
+      // alert("data is loading...")
+      fetch("https://r-r-ornaments-backend.onrender.com/products")
+      .then((res)=> res.json())
+      .then((res)=> {
+        setCollections([...res])
+        // alert("data is loaded!")
+      })
+    })
+    .catch((err)=> {
+      console.log(err)
+      // alert("something went wrong..")
+    })
+
+    
   },[])
 
   console.log(collections)

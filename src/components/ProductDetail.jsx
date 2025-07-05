@@ -1,9 +1,11 @@
 import { useOutletContext, useParams } from 'react-router-dom'
 import Card from './Card'
+import { useContext } from 'react'
+import { UserContext } from './context'
 
 function ProductDetail() {
     const {Id}=useParams()
-    const {collections}=useOutletContext()
+    const collections=useContext(UserContext)
 
     function arrayOfProduct(type,value){
         let array=[]

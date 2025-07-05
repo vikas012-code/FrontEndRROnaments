@@ -49,6 +49,15 @@ function ProductUpload({setAuth}) {
         
         console.log(res2)
         alert("Product added succesfully!...")
+        setPoductDetail({
+            name: "",
+            price: 0,
+            description: "",
+            category: "",
+            discount:0,
+            quantity:true
+            })
+        setImage(null)
         return true
 
         } 
@@ -71,19 +80,7 @@ function ProductUpload({setAuth}) {
     <div className="z-10 w-[93%] bg-white min-h-100 rounded-2xl p-2  ">
         <form className="flex flex-col " onSubmit={(e)=>{
             e.preventDefault()
-            AddNewProduct()?
-            setPoductDetail({
-            name: "",
-            price: 0,
-            description: "",
-            category: "",
-            discount:0,
-            quantity:true
-            })
-        ||
-        setImage(null)
-        :""
-
+            AddNewProduct()
         }}>
             <h3 className=" text-2xl font-bold flex pl-4 pt-4">Add New Product</h3>
             <div className="flex justify-evenly p-4 max-sm:flex-col">

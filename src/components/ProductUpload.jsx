@@ -18,7 +18,7 @@ function ProductUpload({setAuth}) {
 
     async function AddNewProduct(){
         try {
-            const respose = await fetch("http://localhost:8000/products/uploadimage",{
+            const respose = await fetch("https://r-r-ornaments-backend.onrender.com/products/uploadimage",{
                 method: "POST",
                 // headers: {
                 //     "Content-Type": "application/json",
@@ -30,7 +30,7 @@ function ProductUpload({setAuth}) {
 
 
         try {
-            const respose2 = await fetch("http://localhost:8000/products/uploadproduct",{
+            const respose2 = await fetch("https://r-r-ornaments-backend.onrender.com/products/uploadproduct",{
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json",

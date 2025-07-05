@@ -11,7 +11,7 @@ function App() {
   const [collections ,setCollections] = useState([])
 
   useEffect(()=>{
-    fetch("http://localhost:8000/products")
+    fetch("https://r-r-ornaments-backend.onrender.com/products")
     .then((res)=> res.json())
     .then((res)=> setCollections([...res]))
   },[])

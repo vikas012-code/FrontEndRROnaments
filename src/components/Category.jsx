@@ -6,7 +6,7 @@ import { UserContext } from './context'
 function Category() {
     const {Id}=useParams()
 
-    const {collections}=useContext(UserContext)
+    const collections=useContext(UserContext)
 
     console.log(collections)
 
@@ -20,6 +20,7 @@ function Category() {
           {/* {filterdata.map(item => ( 
             <Card key={item._id} item={item} />
           ))} */}
+          useContext
           {JSON.stringify(filterdata)}
         </div>
       </div>

@@ -15,7 +15,7 @@ function Category() {
         <h2 className="text-3xl font-bold text-center mb-10">Our {Id?Id:"Products"}</h2>
         <div className="flex flex-wrap justify-center gap-8">
           {filterdata.map((item) => (
-            <Card item={item} />
+            <Card key={item._id} item={item} />
           ))}
         </div>
       </div>

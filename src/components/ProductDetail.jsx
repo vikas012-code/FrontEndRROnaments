@@ -14,7 +14,7 @@ function ProductDetail() {
     }
 
     const productdata=collections.filter((item)=>item._id==Id)[0]
-    console.log(productdata)
+    //console.log(productdata)
   return (
     <div className='min-h-[80vh] bg-white flex flex-col relative items-center py-5'> 
     {
@@ -80,7 +80,7 @@ function ProductDetail() {
                 <hr className=' opacity-40 border-b' />
                 <div className='mt-4 flex items-center justify-evenly overflow-x-scroll overflow-y-hidden'>
                     {arrayOfProduct("category",productdata.category).map((item)=>(
-                        <Card item={item}/>
+                        <Card key={item._id} item={item}/>
                     ))}
                 </div>
             </div>
@@ -93,7 +93,7 @@ function ProductDetail() {
                 <hr className=' opacity-40 border-b' />
                 <div className='mt-4 flex items-center justify-evenly  overflow-x-scroll overflow-y-hidden '>
                     {arrayOfProduct("name",productdata.name).map((item)=>(
-                        <Card item={item}/>
+                        <Card key={item._id} item={item}/>
                     ))}
                 </div>
             </div>

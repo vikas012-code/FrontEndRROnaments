@@ -26,7 +26,7 @@ function App() {
   
 
   return (
-    <UserContext.Provider value={{collections}}>
+    <UserContext.Provider value={collections}>
       <div className="font-sans">
       <Navbar />
       <Outlet />

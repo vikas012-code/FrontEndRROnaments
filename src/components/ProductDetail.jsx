@@ -28,7 +28,7 @@ function ProductDetail() {
             </div>
             <div className='w-[40%] flex flex-col items-center justify-center max-sm:w-[80%] max-sm:mt-4'>
                 <p className=' text-3xl font-bold max-sm:text-lg'>{productdata.name}</p>
-                <p className=' text-2xl font-medium opacity-70 max-sm:text-lg'>{productdata.price}</p>
+                <p className=' text-2xl font-medium opacity-70 max-sm:text-lg'>₹{productdata.price}</p>
             </div>
         </div>
         <div className='w-[70%] mt-6 flex justify-center max-sm:w-full'>

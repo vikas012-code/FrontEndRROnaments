@@ -21,7 +21,7 @@ function Category() {
             <Card key={item._id} item={item} />
           ))} */}
           useContext
-          {JSON.stringify(filterdata)}
+          {filterdata.length}
         </div>
       </div>
     </section>

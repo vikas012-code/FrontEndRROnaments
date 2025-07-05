@@ -15,9 +15,10 @@ function Category() {
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-10">Our {Id?Id:"Products"}</h2>
         <div className="flex flex-wrap justify-center gap-8">
-          {filterdata.map(item => ( 
+          {/* {filterdata.map(item => ( 
             <Card key={item._id} item={item} />
-          ))}
+          ))} */}
+          {JSON.stringify(filterdata)}
         </div>
       </div>
     </section>

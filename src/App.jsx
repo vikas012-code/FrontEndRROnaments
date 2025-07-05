@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 
 import { Outlet } from 'react-router-dom';
+import { UserContext } from './components/context';
 
 
 function App() {
@@ -25,13 +26,13 @@ function App() {
   
 
   return (
-    <>
+    <UserContext.Provider value={{collections}}>
       <div className="font-sans">
       <Navbar />
-      <Outlet context={{collections}} />
+      <Outlet />
       <Footer />
-    </div>
-    </>
+      </div>
+    </UserContext.Provider>
   )
 }
 

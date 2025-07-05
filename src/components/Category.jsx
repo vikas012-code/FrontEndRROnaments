@@ -1,10 +1,12 @@
-import { useOutletContext, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import Card from './Card'
+import { useContext } from 'react'
+import { UserContext } from './context'
 
 function Category() {
     const {Id}=useParams()
 
-    const {collections}=useOutletContext()
+    const {collections}=useContext(UserContext)
 
     console.log(collections)
 

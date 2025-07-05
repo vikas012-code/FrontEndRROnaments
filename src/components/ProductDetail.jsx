@@ -41,8 +41,7 @@ function ProductDetail() {
         </div> */}
 
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 p-10 items-start">
-        
-        {/* Product Image */}
+    
         <div className=' relative'>
           <img
             src={productdata.image}
@@ -52,7 +51,6 @@ function ProductDetail() {
           <button className='absolute  top-0 right-4 cursor-pointer text-gray-300 focus:text-red-500'><p className=' text-7xl max-sm:text-5xl'>♥</p></button>
         </div>
 
-        {/* Product Details */}
         <div className="space-y-6">
           <h1 className="text-4xl font-bold text-gray-900">{productdata.name}</h1>
           <p className="text-xl text-pink-600 font-semibold">₹{productdata.price}</p>
@@ -64,7 +62,6 @@ function ProductDetail() {
             Add to Cart
           </button>
 
-          {/* Additional Details */}
           <div className="border-t pt-6 space-y-2">
             <h2 className="text-lg font-semibold">Product Details</h2>
             <div className="list-disc list-inside text-sm text-gray-600 space-y-1">

@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import ProductDetail from './components/ProductDetail.jsx';
 import Auth from './components/Auth.jsx';
+import About from './components/About.jsx';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,11 @@ const router = createBrowserRouter([
       {
         path: "productupload",
         element:<Auth/>
+      ,
+      },
+      {
+        path: "about",
+        element:<About/>
       ,
       }
     ],

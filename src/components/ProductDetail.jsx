@@ -60,8 +60,8 @@ function ProductDetail() {
             {`This handcrafted ${productdata.category} is perfect for weddings and special occasions. Featuring intricate details and a timeless design, it adds elegance to any outfit`}
           </p>
 
-          <button className="bg-pink-600 hover:bg-pink-700 text-white font-medium py-3 px-6 rounded-xl transition">
-            Add to Cart
+          <button className="bg-pink-600 hover:bg-pink-700 text-white font-medium py-3 px-6 rounded-xl transition flex gap-2 items-center">
+            Add to WishList <p className='text-2xl'>♥</p>
           </button>
 
           <div className="border-t pt-6 space-y-2">

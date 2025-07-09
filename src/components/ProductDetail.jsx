@@ -5,7 +5,7 @@ import { UserContext } from './context'
 
 function ProductDetail() {
     const {Id}=useParams()
-    const collections=useContext(UserContext)
+    const {collections}=useContext(UserContext)
 
     function arrayOfProduct(type,value){
         let array=[]

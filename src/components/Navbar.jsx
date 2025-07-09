@@ -13,9 +13,9 @@ const Navbar = () => {
 
       
         <ul className="max-md:hidden md:flex space-x-6 text-lg font-semibold text-gray-700">
-          <li><a href="#collections" className="hover:text-pink-600">Collections</a></li>
-          <li><a href="#testimonials" className="hover:text-pink-600">Testimonials</a></li>
-          <li><a href="#contact" className="hover:text-pink-600">Contact</a></li>
+          <li><a href="/#collections" className="hover:text-pink-600">Collections</a></li>
+          <li><a href="/#testimonials" className="hover:text-pink-600">Testimonials</a></li>
+          <li><Link to={"/about"} className="hover:text-pink-600">Contact</Link></li>
           <Link className="hover:text-pink-600" to={"/productupload"}  >Admin</Link>
         </ul>
 
@@ -35,7 +35,7 @@ const Navbar = () => {
         <ul className= {`mt-1 pt-2 md:hidden px-6 pb-4 space-y-3 text-sm font-medium text-gray-700 bg-white shadow-md`}>
           <li><a href="#collections" onClick={() => setIsOpen(false)} className="block hover:text-pink-600">Collections</a></li>
           <li><a href="#testimonials" onClick={() => setIsOpen(false)} className="block hover:text-pink-600">Testimonials</a></li>
-          <li><a href="#contact" onClick={() => setIsOpen(false)} className="block hover:text-pink-600">Contact</a></li>
+          <li><Link to={"/about"} onClick={() => setIsOpen(false)} className="block hover:text-pink-600">Contact</Link></li>
           <Link className="hover:text-pink-600" to={"/productupload"}  >Admin</Link>
         </ul>
       )}

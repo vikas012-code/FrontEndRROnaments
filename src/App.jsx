@@ -10,25 +10,29 @@ function App() {
 
   const [collections ,setCollections] = useState([])
 
+  const [fetchdata,setFetchData]=useState(true)
+
   useEffect(()=>{
-    fetch("https://r-r-ornaments-backend.onrender.com")
-    .then((res)=> res.json())
-    .then((res)=> {
-      console.log(res)
-      // alert("data is loading...")
+    // fetch("https://r-r-ornaments-backend.onrender.com")
+    // .then((res)=> res.json())
+    // .then((res)=> {
+    //   console.log(res)
+    //   // alert("data is loading...")
+
       fetch("https://r-r-ornaments-backend.onrender.com/products")
       .then((res)=> res.json())
       .then((res)=> {
         setCollections([...res])
+        setFetchData(true)
         // alert("data is loaded!")
       })
-    })
+    // })
     .catch((err)=> {
       console.log(err)
+      setFetchData(false)
       // alert("something went wrong..")
     })
 
-    
   },[])
 
   console.log(collections)
@@ -41,7 +45,7 @@ function App() {
   
 
   return (
-    <UserContext.Provider value={collections}>
+    <UserContext.Provider value={{collections ,fetchdata}}>
       <div className="font-sans">
       <Navbar />
       <Outlet />

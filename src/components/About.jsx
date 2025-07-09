@@ -34,8 +34,8 @@ const About = () => {
         <h2 className="text-2xl font-semibold mb-2 text-pink-500">Visit Us</h2>
         <p>
           <strong>R&R Ornaments Shop</strong><br />
-          📍 Shop No. 14, Adharsh Nager Market,<br />
-          Adharsh Nager, Jalandhar, Punjab – 380001<br />
+          📍 Shop No. 14, Adarsh Nagar Market,<br />
+          Adarsh Nagar, Jalandhar, Punjab – 144001<br />
           📞 +91 00000000<br />
           📧 rnr.ornaments@gmail.com
         </p>

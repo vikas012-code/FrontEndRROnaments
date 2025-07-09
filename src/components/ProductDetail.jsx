@@ -50,7 +50,7 @@ function ProductDetail() {
             alt={productdata.name}
             className="w-full h-auto rounded-2xl shadow-xl object-cover"
           />
-          <button className='absolute  top-0 right-4 cursor-pointer text-gray-300 focus:text-red-500'><p className=' text-7xl max-sm:text-5xl'>♥</p></button>
+          {/* <button className='absolute  top-0 right-4 cursor-pointer text-gray-300 focus:text-red-500'><p className=' text-7xl max-sm:text-5xl'>♥</p></button> */}
         </div>
 
         <div className="space-y-6">
@@ -77,7 +77,7 @@ function ProductDetail() {
             <div className='w-[90%]  max-sm:w-full p-2'>
                 <h3 className='text-xl font-bold mb-4' >Similar Product</h3>
                 <hr className=' opacity-40 border-b' />
-                <div className='mt-4 flex items-center justify-evenly overflow-x-scroll overflow-y-hidden'>
+                <div className='mt-4 flex items-center gap-1 overflow-x-scroll overflow-y-hidden'>
                     {arrayOfProduct("category",productdata.category).map((item)=>(
                         <Card key={item._id} item={item}/>
                     ))}
@@ -90,7 +90,7 @@ function ProductDetail() {
             <div className='w-[90%]  max-sm:w-full p-2'>
                 <h3 className='text-xl font-bold mb-4' >Product You May Like</h3>
                 <hr className=' opacity-40 border-b' />
-                <div className='mt-4 flex items-center justify-evenly  overflow-x-scroll overflow-y-hidden '>
+                <div className='mt-4 flex items-center gap-1  overflow-x-scroll overflow-y-hidden '>
                     {arrayOfProduct("name",productdata.name).map((item)=>(
                         <Card key={item._id} item={item}/>
                     ))}

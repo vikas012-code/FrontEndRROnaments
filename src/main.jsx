@@ -9,6 +9,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { lazy, Suspense } from 'react';
+import Loading from './components/Loading.jsx';
 
 const ProductDetail = lazy(() => import('./components/ProductDetail.jsx'));
 
@@ -37,35 +38,35 @@ const router = createBrowserRouter([
       },
       {
         path: "category",
-        element:<Suspense fallback={<div>Loading...</div>}>
+        element:<Suspense fallback={<Loading/>}>
                   <Category/>
                 </Suspense>
       ,
       },
       {
         path: "category/:Id",
-        element:<Suspense fallback={<div>Loading...</div>}>
+        element:<Suspense fallback={<Loading/>}>
                   <Category/>
                 </Suspense>
       ,
       },
       {
         path: "product/:Id",
-        element:<Suspense fallback={<div>Loading...</div>}>
+        element:<Suspense fallback={<Loading/>}>
                   <ProductDetail/>
                 </Suspense>
       ,
       },
       {
         path: "productupload",
-        element:<Suspense fallback={<div>Loading...</div>}>
+        element:<Suspense fallback={<Loading/>}>
                   <Auth/>
                 </Suspense>
       ,
       },
       {
         path: "about",
-        element:<Suspense fallback={<div>Loading...</div>}>
+        element:<Suspense fallback={<Loading/>}>
                   <About/>
                 </Suspense>
       ,

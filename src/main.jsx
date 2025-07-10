@@ -1,7 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
-import Category from './components/Category';
 import Hero from './components/Hero';
 import Collections from './components/Collections';
 import Testimonials from './components/Testimonials';
@@ -9,9 +8,17 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import ProductDetail from './components/ProductDetail.jsx';
-import Auth from './components/Auth.jsx';
-import About from './components/About.jsx';
+import { lazy, Suspense } from 'react';
+
+const ProductDetail = lazy(() => import('./components/ProductDetail.jsx'));
+
+const Auth = lazy(()=> import('./components/Auth.jsx'))
+
+const About = lazy(()=> import('./components/About.jsx'))
+
+const Category = lazy(()=> import('./components/Category'))
+
+
 
 const router = createBrowserRouter([
   {
@@ -30,27 +37,37 @@ const router = createBrowserRouter([
       },
       {
         path: "category",
-        element:<Category/>
+        element:<Suspense fallback={<div>Loading...</div>}>
+                  <Category/>
+                </Suspense>
       ,
       },
       {
         path: "category/:Id",
-        element:<Category/>
+        element:<Suspense fallback={<div>Loading...</div>}>
+                  <Category/>
+                </Suspense>
       ,
       },
       {
         path: "product/:Id",
-        element:<ProductDetail/>
+        element:<Suspense fallback={<div>Loading...</div>}>
+                  <ProductDetail/>
+                </Suspense>
       ,
       },
       {
         path: "productupload",
-        element:<Auth/>
+        element:<Suspense fallback={<div>Loading...</div>}>
+                  <Auth/>
+                </Suspense>
       ,
       },
       {
         path: "about",
-        element:<About/>
+        element:<Suspense fallback={<div>Loading...</div>}>
+                  <About/>
+                </Suspense>
       ,
       }
     ],

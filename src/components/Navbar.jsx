@@ -7,7 +7,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-lg sticky top-0 z-50 ">
+    <nav className="bg-white shadow-lg sticky top-0 z-40 ">
       <div className="mx-auto px-6 py-2 flex items-center justify-between shadow-sm">
         <a href='/' className="text-2xl font-bold text-gray-800"><img className='hover:scale-110 duration-200 w-26 ' src={logo} alt="" /></a>
 
@@ -16,7 +16,7 @@ const Navbar = () => {
           <li><Link href="/#collections" className="hover:text-pink-600">Collections</Link></li>
           <li><Link href="/#testimonials" className="hover:text-pink-600">Testimonials</Link></li>
           <li><Link to={"/about"} className="hover:text-pink-600">Contact</Link></li>
-          <Link className="hover:text-pink-600" to={"/productupload"}  >Admin</Link>
+          <Link className="hover:text-pink-600" to={"/adminPanel"}  >Admin</Link>
         </ul>
 
        
@@ -36,7 +36,7 @@ const Navbar = () => {
           <li><a href="/#collections" onClick={() => setIsOpen(false)} className="block hover:text-pink-600">Collections</a></li>
           <li><a href="/#testimonials" onClick={() => setIsOpen(false)} className="block hover:text-pink-600">Testimonials</a></li>
           <li><Link to={"/about"} onClick={() => setIsOpen(false)} className="block hover:text-pink-600">Contact</Link></li>
-          <Link className="hover:text-pink-600" to={"/productupload"}  >Admin</Link>
+          <Link className="hover:text-pink-600" to={"/adminPanel"}  >Admin</Link>
         </ul>
       )}
     </nav>

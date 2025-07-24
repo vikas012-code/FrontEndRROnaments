@@ -1,8 +1,13 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import Loading from './Loading';
+import { UserContext } from './context';
 
-function ProductUpload({setAuth}) {
+function ProductUpload({props}) {
 
+    const {setAddProductToggle,setAuth,setProductIsUploading}=props
     const [image,setImage]=useState(null)
+
+    const {setRefresh}=useContext(UserContext)
 
     const formData = new FormData();
     formData.append('files',image);
@@ -17,6 +22,7 @@ function ProductUpload({setAuth}) {
     })
 
     async function AddNewProduct(){
+        setProductIsUploading(true)
         try {
             const respose = await fetch("https://r-r-ornaments-backend.onrender.com/products/uploadimage",{
                 method: "POST",
@@ -58,17 +64,20 @@ function ProductUpload({setAuth}) {
             quantity:true
             })
         setImage(null)
+        setProductIsUploading(false)
+        setRefresh(prev=> !prev)
         return true
-
         } 
 
 
         catch (error) {
+            setProductIsUploading(false)
             alert("something went wrong?...")
             console.log(error)
         }
         
         } catch (error) {
+            setProductIsUploading(false)
             console.log(error)
             alert("something went wrong?...")
             return false
@@ -77,7 +86,8 @@ function ProductUpload({setAuth}) {
 
 
   return (
-    <div className="z-10 w-[93%] bg-white min-h-100 rounded-2xl p-2  ">
+    <div className="z-10 w-[93%] bg-white min-h-100 rounded-2xl p-2 relative">
+        
         <form className="flex flex-col " onSubmit={(e)=>{
             e.preventDefault()
             AddNewProduct()
@@ -152,7 +162,7 @@ function ProductUpload({setAuth}) {
                 </div>
             </div>
             <div className=" flex justify-around px-4 pb-4">
-                <button type='button' className=" border border-gray-300 w-[20%] h-10 self-end  hover:bg-cyan-500 hover:text-white hover:scale-105 duration-300 rounded-lg" onClick={()=>{
+                <button type='button' className=" border border-gray-300 w-[20%] h-10 self-end  hover:bg-pink-400 hover:text-white hover:scale-105 duration-300 rounded-lg" onClick={()=>{
                     setPoductDetail({
                         name: "",
                         price: 0,
@@ -163,10 +173,12 @@ function ProductUpload({setAuth}) {
                         })
                     ||
                     setImage(null)
+                    // ||
+                    // setAuth(false)
                     ||
-                    setAuth(false)
+                    setAddProductToggle(false)
                 }}>Cancel</button>
-                <button className=" border border-gray-300 w-[20%] h-10 self-end bg-cyan-500 text-white  hover:bg-white hover:text-black hover:scale-105 duration-300 rounded-lg max-lg:w-fit" type="submit">Add Product</button>
+                <button className=" border border-gray-300 w-[20%] h-10 self-end bg-pink-400 text-white  hover:bg-white hover:text-black hover:scale-105 duration-300 rounded-lg max-lg:w-fit" type="submit">Add Product</button>
             </div>
         </form>
     </div>

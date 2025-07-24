@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import ProductUpload from './ProductUpload'
+import AdminPanel from './AdminPanel'
 
 function Auth() {
 
@@ -65,7 +66,7 @@ function Auth() {
         </form>
     </div>
     :
-    <ProductUpload setAuth={setAuth}/>
+    <AdminPanel setAuth={setAuth}/>
   )
 }
 

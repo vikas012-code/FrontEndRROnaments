@@ -2,11 +2,10 @@ import React from 'react'
 import { useContext } from 'react'
 import { UserContext } from './context'
 
-function AdminProductListing() {
+function AdminProductListing({setProductIsUploading}) {
     const {collections,setRefresh}=useContext(UserContext)
 
     async function deleteProduct(productId){
-        
         setProductIsUploading(true)
         try{
             const respose = await fetch("https://r-r-ornaments-backend.onrender.com/products/deleteproductbyid",{
@@ -36,10 +35,9 @@ function AdminProductListing() {
 
 
     async function ChangeProductQuantity(productId,productQuantity){
-        
         setProductIsUploading(true)
         try{
-            const respose = await fetch("https://r-r-ornaments-backend.onrender.com/products//changequantityinstock",{
+            const respose = await fetch("https://r-r-ornaments-backend.onrender.com/products/changequantityinstock",{
                         method: "PATCH",
                         headers: {
                             "Content-Type": "application/json",

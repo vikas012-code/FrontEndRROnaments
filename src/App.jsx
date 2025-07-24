@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 
 import { Outlet } from 'react-router-dom';
 import { UserContext } from './components/context';
+import Loading from './components/Loading';
 
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
   const [collections ,setCollections] = useState([])
 
   const [fetchdata,setFetchData]=useState(true)
+
+  const [refresh,setRefresh]=useState(true)
 
   useEffect(()=>{
     // fetch("https://r-r-ornaments-backend.onrender.com")
@@ -33,7 +36,7 @@ function App() {
       // alert("something went wrong..")
     })
 
-  },[])
+  },[refresh])
 
   console.log(collections)
 
@@ -45,9 +48,10 @@ function App() {
   
 
   return (
-    <UserContext.Provider value={{collections ,fetchdata}}>
+    <UserContext.Provider value={{collections ,fetchdata ,setRefresh}}>
       <div className="font-sans">
       <Navbar />
+      
       <Outlet />
       <Footer />
       </div>

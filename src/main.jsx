@@ -58,7 +58,7 @@ const router = createBrowserRouter([
       ,
       },
       {
-        path: "productupload",
+        path: "adminPanel",
         element:<Suspense fallback={<Loading/>}>
                   <Auth/>
                 </Suspense>

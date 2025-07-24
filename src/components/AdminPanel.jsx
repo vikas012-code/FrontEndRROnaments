@@ -15,7 +15,7 @@ function AdminPanel({setAuth}) {
         ProductIsUploading
         &&
         <div className=' fixed top-0 w-[99vw] h-[100vh] z-50 cursor-progress  backdrop-blur-[1px] backdrop-brightness-80'>
-        <p className=' text-2xl text-pink-500 absolute top-[40%] left-[45%]'>Product Adding...</p>
+        <p className=' text-2xl text-pink-500 absolute top-[40%] left-[45%]'>Products...</p>
         <Loading/>
         </div>
     }
@@ -40,7 +40,7 @@ function AdminPanel({setAuth}) {
                     
                 </div>
                 }
-                <AdminProductListing/>
+                <AdminProductListing setProductIsUploading={setProductIsUploading}/>
             </div>
     
     </>

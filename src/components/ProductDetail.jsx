@@ -42,7 +42,7 @@ function ProductDetail() {
             </div>
         </div> */}
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 p-10 items-start">
+        <div className={`max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 p-10 items-start ${!productdata.quantity && " opacity-60 saturate-50"}`}>
     
         <div className=' relative'>
           <img
@@ -56,6 +56,7 @@ function ProductDetail() {
         <div className="space-y-6">
           <h1 className="text-4xl font-bold text-gray-900">{productdata.name}</h1>
           <p className="text-xl text-pink-600 font-semibold">₹{productdata.price}</p>
+          <p className={`text-xl  font-semibold ${productdata.quantity?" text-green-400":" text-red-600"}`}>{productdata.quantity?"In-Stock":"Out Of Stock"}</p>
           <p className="text-gray-700 leading-relaxed">
             {`This handcrafted ${productdata.category} is perfect for weddings and special occasions. Featuring intricate details and a timeless design, it adds elegance to any outfit`}
           </p>

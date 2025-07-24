@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 function Card({item,price}) {
   
   return (
-    <div className=" bg-gray-50 mx-2 p-6 rounded-xl shadow active:shadow-xl hover:shadow-xl min-w-80 w-80 min-h-90 h-90 max-sm:min-w-50 max-sm:min-h-60 max-sm:w-50 max-sm:h-60">
+    <div className={`${!item.quantity && " opacity-60 saturate-50"} bg-gray-50 mx-2 p-6 rounded-xl shadow active:shadow-xl hover:shadow-xl min-w-80 w-80 min-h-90 h-90 max-sm:min-w-50 max-sm:min-h-60 max-sm:w-50 max-sm:h-60`}>
       <Link to={`${price?`/category/${item.category}`:`/product/${item._id}`}`} className='w-full h-full' >
         <img src={item.image} className="w-full h-[80%] object-cover rounded-lg " />
         <div className="mt-4 max-sm:mt-2 text-center">

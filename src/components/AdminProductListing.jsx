@@ -23,8 +23,8 @@ function AdminProductListing() {
         console.log(res2)
         alert("Product deleted succesfully!...")
         setProductIsUploading(false)
-        return true
         setRefresh(prev=> !prev)
+        return true
         } 
         catch (error) {
             setProductIsUploading(false)
@@ -54,8 +54,8 @@ function AdminProductListing() {
         console.log(res2)
         
         setProductIsUploading(false)
-        return true
         setRefresh(prev=> !prev)
+        return true
         } 
         catch (error) {
             setProductIsUploading(false)
@@ -64,35 +64,6 @@ function AdminProductListing() {
         }
         
     }
-
-
-    // async function productQuantityToOutOfStock(productId){
-        
-    //     setProductIsUploading(true)
-    //     try{
-    //         const respose = await fetch("https://r-r-ornaments-backend.onrender.com/products/uploadproduct",{
-    //                     method: "PATCH",
-    //                     headers: {
-    //                         "Content-Type": "application/json",
-    //                     },
-    //                     body: JSON.stringify({
-    //                         _id:productId
-    //                     })
-    //                 })
-    //     const res2= await respose.json()
-        
-    //     console.log(res2)
-    //     alert("Product deleted succesfully!...")
-    //     setProductIsUploading(false)
-    //     return true
-    //     } 
-    //     catch (error) {
-    //         setProductIsUploading(false)
-    //         alert("something went wrong?...")
-    //         console.log(error)
-    //     }
-        
-    // }
     
   return (
     <>

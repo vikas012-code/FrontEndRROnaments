@@ -94,7 +94,7 @@ function AdminProductListing({setProductIsUploading}) {
                                 <p className=" w-[13%] ">₹{item.price}</p>
                                 <button onClick={()=>{
                                     ChangeProductQuantity(item._id,item.quantity)
-                                }} className=" w-[15%]  border p-2 rounded-xl text-sm text-pink-400 active:text-white active:bg-pink-400 duration-300 max-sm:rounded-lg max-sm:text-[0.5rem] mr-1">{item.quantity?"InStock":"OutOfStock"}</button>
+                                }} className=" w-[15%]  border p-2 rounded-xl text-sm text-pink-400 active:text-white active:bg-pink-400 duration-300 max-sm:rounded-lg max-sm:text-[0.5rem] mr-1">{item.quantity?"InStock":"OutOf Stock"}</button>
                                 <button onClick={()=>{
                                     deleteProduct(item._id)
                                 }} className=' text-red-500 border p-2 rounded-xl text-sm active:text-white active:bg-red-500 duration-300 max-sm:rounded-lg max-sm:text-[0.5rem]'>Delete</button>

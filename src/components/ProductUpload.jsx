@@ -162,7 +162,7 @@ function ProductUpload({props}) {
                 </div>
             </div>
             <div className=" flex justify-around px-4 pb-4">
-                <button type='button' className=" border border-gray-300 w-[20%] h-10 self-end  hover:bg-pink-400 hover:text-white hover:scale-105 duration-300 rounded-lg" onClick={()=>{
+                <button type='button' className="p-1 border border-gray-300 w-[20%] h-10 self-end  hover:bg-pink-400 hover:text-white hover:scale-105 duration-300 rounded-lg" onClick={()=>{
                     setPoductDetail({
                         name: "",
                         price: 0,
@@ -178,7 +178,7 @@ function ProductUpload({props}) {
                     ||
                     setAddProductToggle(false)
                 }}>Cancel</button>
-                <button className=" border border-gray-300 w-[20%] h-10 self-end bg-pink-400 text-white  hover:bg-white hover:text-black hover:scale-105 duration-300 rounded-lg max-lg:w-fit" type="submit">Add Product</button>
+                <button className="p-1 border border-gray-300 w-[20%] h-10 self-end bg-pink-400 text-white  hover:bg-white hover:text-black hover:scale-105 duration-300 rounded-lg max-lg:w-fit" type="submit">Add Product</button>
             </div>
         </form>
     </div>

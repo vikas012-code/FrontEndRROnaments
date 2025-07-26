@@ -15,7 +15,6 @@ function AdminPanel({setAuth}) {
         ProductIsUploading
         &&
         <div className=' fixed top-0 w-[99vw] h-[100vh] z-50 cursor-progress  backdrop-blur-[1px] backdrop-brightness-80'>
-        <p className=' text-2xl text-pink-500 absolute top-[40%] left-[45%]'>Products...</p>
         <Loading/>
         </div>
     }
@@ -31,7 +30,7 @@ function AdminPanel({setAuth}) {
                 :
                 <div className="bg-white w-[93%] p-10 rounded-2xl flex  items-center justify-end  relative">
                     
-                    <button className=" border border-pink-400  h-20 min-w-50 rounded-xl hover:bg-pink-400 hover:text-white hover:scale-105 duration-300" 
+                    <button className=" border border-pink-400  h-20 min-w-50 rounded-xl hover:bg-pink-400 hover:text-white hover:scale-105 active:bg-pink-400 active:text-white active:scale-105 duration-300" 
                     onClick={()=>{
                         setAddProductToggle(true)
                     }}>

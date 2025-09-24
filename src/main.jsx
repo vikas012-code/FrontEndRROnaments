@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import { lazy, Suspense } from 'react';
 import Loading from './components/Loading.jsx';
+import ScrollTop from './components/ScrollTop.jsx';
 
 const ProductDetail = lazy(() => import('./components/ProductDetail.jsx'));
 
@@ -23,55 +24,60 @@ const Category = lazy(()=> import('./components/Category'))
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "/",
-        element:
-        <> 
-          <Hero />
-          <Collections />
-          <Testimonials />
-        </>
-      ,
-      },
-      {
-        path: "category",
-        element:<Suspense fallback={<Loading/>}>
-                  <Category/>
-                </Suspense>
-      ,
-      },
-      {
-        path: "category/:Id",
-        element:<Suspense fallback={<Loading/>}>
-                  <Category/>
-                </Suspense>
-      ,
-      },
-      {
-        path: "product/:Id",
-        element:<Suspense fallback={<Loading/>}>
-                  <ProductDetail/>
-                </Suspense>
-      ,
-      },
-      {
-        path: "adminPanel",
-        element:<Suspense fallback={<Loading/>}>
-                  <Auth/>
-                </Suspense>
-      ,
-      },
-      {
-        path: "about",
-        element:<Suspense fallback={<Loading/>}>
-                  <About/>
-                </Suspense>
-      ,
-      }
-    ],
+    element:<ScrollTop/>,
+    children:[
+    {
+      path: "/",
+      element: <App />,
+      children: [
+        {
+          path: "/",
+          element:
+          <> 
+            <Hero />
+            <Collections />
+            <Testimonials />
+          </>
+        ,
+        },
+        {
+          path: "category",
+          element:<Suspense fallback={<Loading/>}>
+                    <Category/>
+                  </Suspense>
+        ,
+        },
+        {
+          path: "category/:Id",
+          element:<Suspense fallback={<Loading/>}>
+                    <Category/>
+                  </Suspense>
+        ,
+        },
+        {
+          path: "product/:Id",
+          element:<Suspense fallback={<Loading/>}>
+                    <ProductDetail/>
+                  </Suspense>
+        ,
+        },
+        {
+          path: "adminPanel",
+          element:<Suspense fallback={<Loading/>}>
+                    <Auth/>
+                  </Suspense>
+        ,
+        },
+        {
+          path: "about",
+          element:<Suspense fallback={<Loading/>}>
+                    <About/>
+                  </Suspense>
+        ,
+        }
+      ],
+    }
+    ]
   },
 ]);
 

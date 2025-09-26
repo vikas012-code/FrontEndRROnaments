@@ -7,10 +7,11 @@ function ProductUpload({props}) {
     const {setAddProductToggle,setAuth,setProductIsUploading}=props
     const [image,setImage]=useState(null)
 
-    const {setRefresh}=useContext(UserContext)
-
+    
     const formData = new FormData();
     formData.append('files',image);
+    
+    const {setRefresh}=useContext(UserContext)
     
     const [productDetail,setPoductDetail]=useState({
     name: "",
@@ -26,9 +27,6 @@ function ProductUpload({props}) {
         try {
             const respose = await fetch("https://r-r-ornaments-backend.onrender.com/products/uploadimage",{
                 method: "POST",
-                // headers: {
-                //     "Content-Type": "application/json",
-                // },
                 body: formData
             })
         const res= await respose.json()
@@ -72,14 +70,14 @@ function ProductUpload({props}) {
 
         catch (error) {
             setProductIsUploading(false)
-            alert("something went wrong?...")
+            alert("something went wrong while uploading product?...")
             console.log(error)
         }
         
         } catch (error) {
             setProductIsUploading(false)
             console.log(error)
-            alert("something went wrong?...")
+            alert("something went wrong while uploading image?...")
             return false
         }
     }
